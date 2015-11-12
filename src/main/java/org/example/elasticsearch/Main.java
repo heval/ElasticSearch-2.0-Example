@@ -20,8 +20,7 @@ public class Main {
     public static void main(String[] args) {
         ElasticSearch elasticSearch = new ElasticSearch();
         Node node = new NodeBuilder().clusterName("customer")
-        .settings(Settings.builder()
-        .put("path.home", "/usr/share/elasticsearch")).node();
+            .settings(Settings.builder().put("path.home", "/usr/share/elasticsearch")).node();
         Client client = node.client();
 
         elasticSearch.addDocument(client, "site", "user", "1", 
